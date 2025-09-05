@@ -4,17 +4,17 @@
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
 
-    "target": "ES2020",
-    "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
+    "target": "ES2022",
     "module": "ESNext",
     "moduleResolution": "node",
-    "outDir": "dist",
-    "rootDir": "src",
     "esModuleInterop": true,
-    "moduleDetection": "force",
     "strict": true,
     "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "dist",
+    "resolveJsonModule": true,
+    "rootDir": "src",
+    "moduleDetection": "force",
     "types": [],
     // For nodejs:
     // "lib": ["esnext"],
@@ -43,6 +43,10 @@
     "verbatimModuleSyntax": true,
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true
+  },
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
   },
   "include": ["src"],
   "exclude": ["node_modules"]
