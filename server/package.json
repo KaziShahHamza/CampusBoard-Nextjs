@@ -7,7 +7,7 @@
   "type": "module",
   "main": "index.ts",
   "scripts": {
-    "dev": "ts-node-esm src/index.ts",
+    "dev": "ts-node-esm index.ts",
     "build": "tsc",
     "start": "node dist/index.js"
   },

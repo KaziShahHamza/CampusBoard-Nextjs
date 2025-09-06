@@ -1,25 +1,11 @@
 import express from "express";
-import mongoose from "mongoose";
 import dotenv from "dotenv";
-import { testUsers } from "./testData"; // ✅ import test file
+import connectDB from "./utils/db.ts"; // ✅ import test file
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-
-// ✅ Connect to MongoDB
-const connectDB = async () => {
-  try {
-    console.log("🔍 Connecting to DB:", process.env.MONGO_URI);
-    await mongoose.connect(process.env.MONGO_URI as string);
-    console.log("✅ MongoDB connected");
-  } catch (error: any) {
-    console.error("❌ DB connection error:", error.message);
-    console.error("📛 Full Error:", error);
-    process.exit(1);
-  }
-};
 
 connectDB();
 
