@@ -1,24 +1,39 @@
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema(
-  {
-    username: {
-      type: String,
-      required: true,
-      unique: true,
+    {
+        name: {
+            type: String,
+            required: true,
+        },
+        email: {
+            type: String,
+            required: true,
+            unique: true,
+        },
+        password: {
+            type: String,
+            required: true,
+        },
+        image: {
+            type: String
+        },
+        universityId: {
+            type: String,
+            unique: true,
+            required: true
+        },
+        department: {
+            type: String,
+        },
+        batch: {
+            type: number,
+        },
+        isAlumni: {
+            type: boolean,
+        },
     },
-    email: {
-      type: String,
-      required: true,
-      unique: true,
-    },
-    password: {
-      type: String,
-      required: true,
-    },
-    // Add more fields as needed, e.g., role, department, etc.
-  },
-  { timestamps: true }
+    {timestamps: true}
 );
 
 export default mongoose.model("User", userSchema);
